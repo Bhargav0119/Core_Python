@@ -1,0 +1,8 @@
+Error: IndexError: string index out of range
+
+Cause:
+Tried to access language[6], but "Python"
+only has indexes 0 through 5.
+
+Lesson:
+Python indexing starts at 0.
