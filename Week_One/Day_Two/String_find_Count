@@ -1,0 +1,16 @@
+text = "Python is powerful"
+print(text.find("Python"))
+
+
+text = "I am learning Python"
+print(text.find("Python"))
+print(text.find("Java"))
+print(text.find("python"))
+
+
+text = "Python SQL Python Pandas Python"
+print(text.count("Python"))
+
+
+fruit = "banana"
+print(fruit.count("a"))
