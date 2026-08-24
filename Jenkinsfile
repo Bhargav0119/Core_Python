@@ -5,6 +5,10 @@ pipeline {
         PYTHON_EXE = 'C:\\Users\\Dell\\AppData\\Local\\Programs\\Python\\Python312\\python.exe'
     }
 
+    triggers {
+    pollSCM('H/5 * * * *')
+}
+
     stages {
         stage('Verify Python') {
             steps {
