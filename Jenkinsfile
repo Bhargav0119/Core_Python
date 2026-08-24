@@ -16,6 +16,12 @@ pipeline {
             }
         }
 
+        stage('Syntax Check') {
+    steps {
+        bat '"%PYTHON_EXE%" -m compileall -q Week_One'
+    }
+}
+
         stage('Discover Python Files') {
             steps {
                 bat 'dir /s /b *.py'
