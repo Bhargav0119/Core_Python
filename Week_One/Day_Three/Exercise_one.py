@@ -1,0 +1,15 @@
+skills = ["Python", "SQL", "Pandas", "FastAPI"]
+
+# print(skills)
+# print(*skills)
+# print(*skills, sep="\n")
+print(skills[0])
+print(skills[1])
+print(skills[2])
+print(skills[3])
+print(skills[-1])
+print(skills[-2])
+print(skills[-3])
+print(skills[-4])
+print(len(skills))
+print(type(skills))

@@ -1,0 +1,5 @@
+skills = ["Python", "SQL", "Pandas"]
+
+skills.remove("SQL")
+
+print(skills)

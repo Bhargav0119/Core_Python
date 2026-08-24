@@ -1,0 +1,19 @@
+skills = ["Python", "SQL", "Pandas", "FastAPI"]
+
+print(skills)
+removed = skills.pop()
+print(skills)
+print(removed)
+
+# # Example with a List
+# fruits = ["apple", "banana", "cherry"]
+
+# # 1. Pop without arguments (removes the last item)
+# last_fruit = fruits.pop() 
+# print(last_fruit)  # Output: "cherry"
+# print(fruits)      # Output: ["apple", "banana"]
+
+# # 2. Pop with a specific index
+# first_fruit = fruits.pop(0) 
+# print(first_fruit) # Output: "apple"
+# print(fruits)      # Output: ["banana"]
