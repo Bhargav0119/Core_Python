@@ -6,8 +6,8 @@ pipeline {
     }
 
     triggers {
-    pollSCM('H/5 * * * *')
-}
+        pollSCM('H/5 * * * *')
+    }
 
     stages {
         stage('Verify Python') {
@@ -17,14 +17,28 @@ pipeline {
         }
 
         stage('Syntax Check') {
-    steps {
-        bat '"%PYTHON_EXE%" -m compileall -q Week_One'
-    }
-}
+            steps {
+                bat '"%PYTHON_EXE%" -m compileall -q Week_One'
+            }
+        }
 
         stage('Discover Python Files') {
             steps {
                 bat 'dir /s /b *.py'
+            }
+        }
+
+        stage('Create Test Environment') {
+            steps {
+                bat 'if exist .venv rmdir /s /q .venv'
+                bat '"%PYTHON_EXE%" -m venv .venv'
+                bat '.venv\\Scripts\\python.exe -m pip install -r requirements-dev.txt'
+            }
+        }
+
+        stage('Run Automated Tests') {
+            steps {
+                bat '.venv\\Scripts\\python.exe -m pytest -v'
             }
         }
 
