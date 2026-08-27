@@ -38,8 +38,16 @@ pipeline {
 
         stage('Run Automated Tests') {
             steps {
-                bat '.venv\\Scripts\\python.exe -m pytest -v'
-            }
+                    bat 'if not exist test-results mkdir test-results'
+                    bat '.venv\\Scripts\\python.exe -m pytest -v --junitxml=test-results\\pytest-results.xml'
+    }
+
+    post {
+        always {
+            junit testResults: 'test-results/pytest-results.xml',
+                  allowEmptyResults: true
+        }
+    }
         }
 
         stage('Run Python Exercise') {
