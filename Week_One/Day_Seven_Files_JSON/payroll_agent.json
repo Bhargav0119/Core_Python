@@ -1,0 +1,9 @@
+{
+    "name": "Payroll Agent",
+    "status": "Active",
+    "model": "Gemini",
+    "tools": [
+        "Python",
+        "FastAPI"
+    ]
+}

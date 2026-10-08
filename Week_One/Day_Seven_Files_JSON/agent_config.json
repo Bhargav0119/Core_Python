@@ -1,0 +1,6 @@
+{
+    "name": "Policy Agent",
+    "status": "Active",
+    "model": "Gemini",
+    "tools": ["FastAPI", "SQL"]
+}
